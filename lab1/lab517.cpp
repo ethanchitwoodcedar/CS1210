@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-   const int DEFAULT_NUMBER_OF_ROUNDS = 4;
+   const int DEFAULT_NUMBER_OF_ROUNDS = 15;
    int       numRounds = DEFAULT_NUMBER_OF_ROUNDS;
 
    // if a command line argument is given, use that string to init the
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
    cout << "Welcome to Simon, press enter to play .... ";
    getline(cin, s, '\n');
 
-   for (round = 1; round <= DEFAULT_NUMBER_OF_ROUNDS; round++) {
+   for (round = 1; round <= numRounds; round++) {
       system(string("clear"));
       cout << "Simon says:  ";
       for (int i = 0; i < round; i++) {
