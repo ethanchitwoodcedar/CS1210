@@ -32,7 +32,7 @@ int main() {
 
       if ((sum != oldSum) && (i > 0)) { 
          isMagic = false;
-	 break;
+         break;
       }
 
       oldSum = sum;
@@ -51,7 +51,7 @@ int main() {
          }
 
          oldSum = sum;
-	       sum = 0;
+         sum = 0;
       }
    }
 
