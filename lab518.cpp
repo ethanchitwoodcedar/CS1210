@@ -24,6 +24,10 @@ int main() {
          cin >> arrSquare[i][j];
       }
    }
+   
+   if(isValidInput(arrSquare, width) == false) {
+      cout << "Not all expected numbers are present\n";
+   }
 
    for (int i = 0; i < width; i++) {        // Checks rows.
       for (int j = 0; j < width; j++) {
@@ -32,6 +36,7 @@ int main() {
 
       if ((sum != oldSum) && (i > 0)) { 
          isMagic = false;
+         cout << "Row sums differ\n";
          break;
       }
 
@@ -39,7 +44,7 @@ int main() {
       sum = 0;
    }
 
-   if (isMagic) {                           // Checks Colums.
+   if (isMagic) {                           // Checks Columns.
       for (int i = 0; i < width; i++) {
          for (int j = 0; j < width; j++) {
             sum += arrSquare[j][i];
@@ -47,6 +52,7 @@ int main() {
 
          if (sum != oldSum) {
             isMagic = false;
+            cout << "Column sums differ\n";
             break;
          }
 
@@ -62,6 +68,7 @@ int main() {
 
       if (sum != oldSum) {
          isMagic = false;
+         cout << "Diagonal sums differ\n";
       }
 
       sum = 0;
@@ -74,14 +81,25 @@ int main() {
 
       if (sum != oldSum) {
          isMagic = false;
+         cout << "Diagonal sums differ\n";
       }
    }
 
    if (isMagic) { 
       cout << "The given matrix is a magic square\n";
    }
-   else {
-      cout << "Row sums differ\n";
-   }
    return 0;
+}
+
+bool isValidInput(int input[][], int size) {
+   bool isValid = true;
+   
+   for (int i = 0; i < width; i++) {        // Takes input.
+      for (int j = 0; j < width; j++) {
+         for (int k = 0; k < width; k++) {
+            input[i][j];
+         }
+      }
+   }
+   return isValid;
 }
