@@ -47,7 +47,7 @@ int main() {
 
          if (sum != oldSum) {
             isMagic = false;
-	          break;
+            break;
          }
 
          oldSum = sum;
