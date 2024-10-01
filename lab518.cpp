@@ -27,21 +27,24 @@ int main() {
    
    if(isValidInput(arrSquare, width) == false) {
       cout << "Not all expected numbers are present\n";
+      isMagic = false;
    }
+   
+   if (isMagic) {
+      for (int i = 0; i < width; i++) {        // Checks rows.
+         for (int j = 0; j < width; j++) {
+            sum += arrSquare[i][j];
+         }
 
-   for (int i = 0; i < width; i++) {        // Checks rows.
-      for (int j = 0; j < width; j++) {
-         sum += arrSquare[i][j];
+         if ((sum != oldSum) && (i > 0)) { 
+            isMagic = false;
+            cout << "Row sums differ\n";
+            break;
+         }
+
+         oldSum = sum;
+         sum = 0;
       }
-
-      if ((sum != oldSum) && (i > 0)) { 
-         isMagic = false;
-         cout << "Row sums differ\n";
-         break;
-      }
-
-      oldSum = sum;
-      sum = 0;
    }
 
    if (isMagic) {                           // Checks Columns.
