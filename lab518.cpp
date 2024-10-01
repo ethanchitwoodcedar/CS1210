@@ -15,10 +15,11 @@ int main() {
    int oldSum = 0;
    int width;
    bool isMagic = true;
-   bool varifyInput[size*size] = {false};
-   int arrSquare[width][width];
    
    cin >> width;
+
+   bool varifyInput[width * width] = {false};
+   int arrSquare[width][width];
       
    for (int i = 0; i < width; i++) {
       for (int j = 0; j < width; j++) {
